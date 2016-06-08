@@ -1,0 +1,19 @@
+{
+  "name": "tsify-test",
+  "version": "1.0.0",
+  "description": "X",
+  "author": "X",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "tsify": "^0.16.0"
+  },
+  "scripts": {
+    "without-tsconfig": "rm -f tsconfig.json; browserify app/main.ts -p [ tsify ]",
+    "with-tsconfig": "echo {} > tsconfig.json; browserify app/main.ts -p [ tsify ]",
+
+    "tsc-without-tsconfig": "rm -f tsconfig.json; tsc app/main.ts --out /dev/stdout",
+    "tsc-with-tsconfig": "echo {} > tsconfig.json; tsc app/main.ts --out /dev/stdout",
+    "tsc-with-tsconfig-without-file": "echo {} > tsconfig.json; tsc --out /dev/stdout"
+  }
+}
